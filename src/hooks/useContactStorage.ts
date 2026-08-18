@@ -2,8 +2,7 @@ import { useContext, useEffect } from "react";
 import { emptyContact } from "@/lib/vcard";
 import { GlobalContext } from "@/context/GlobalContext";
 
-// const STORAGE_KEY = "tapcard.contact.v1";
-const STORAGE_KEY = "tapcard.contact.v2";
+const STORAGE_KEY = "qr.contact.v1";
 
 export function useContactStorage() {
   const { hydrated, contact, setContact } = useContext(GlobalContext);

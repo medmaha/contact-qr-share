@@ -96,7 +96,7 @@ export default function QRCodeCard() {
             <Button
               variant="link"
               size={"sm"}
-              className="mt-2 text-muted-foreground"
+              className="mt-2 text-muted-foreground underline underline-offset-3"
               onClick={downloadVcf}
             >
               Or download the .vcf contact file
