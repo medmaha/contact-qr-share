@@ -20,7 +20,7 @@ export default function AppHeader({link, title}:{link:string, title:string}) {
               </h1>
             </Link>
 
-            <nav className="flex items-center gap-4 text-sm">
+            <nav className="flex items-center gap-2 sm:gap-4 text-sm">
               <Link
                 to={link}
                 className="text-muted-foreground hover:text-foreground"

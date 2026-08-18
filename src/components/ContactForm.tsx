@@ -36,18 +36,20 @@ export default function ContactForm() {
           onChange={(e) => set("lastName", e.target.value)}
         />
       </div>
-      <InfoField
-        label="Profession"
-        placeholder="Software Engineer"
-        value={contact.profession}
-        onChange={(e) => set("profession", e.target.value)}
-      />
-      <InfoField
-        label="Company"
-        placeholder="..."
-        value={contact.organization}
-        onChange={(e) => set("organization", e.target.value)}
-      />
+      <div className="grid sm:grid-cols-2 gap-y-5 gap-x-3">
+        <InfoField
+          label="Profession"
+          placeholder="Software Engineer"
+          value={contact.profession}
+          onChange={(e) => set("profession", e.target.value)}
+        />
+        <InfoField
+          label="Company"
+          placeholder="..."
+          value={contact.organization}
+          onChange={(e) => set("organization", e.target.value)}
+        />
+      </div>
 
       <RepeatableList
         title="Phone numbers"
@@ -76,37 +78,30 @@ export default function ContactForm() {
         onChange={(v) => set("links", v)}
       />
 
-      <div className="space-y-3">
-        <Label className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-          Address
-        </Label>
-        <Input
-          className="h-9 rounded-xl bg-card"
-          placeholder="Street"
+      <div className="space-y-3 text-left">
+        <InfoField
+          label="Address"
+           placeholder="Street"
           value={contact.street}
           onChange={(e) => set("street", e.target.value)}
         />
         <div className="grid grid-cols-2 gap-3">
           <Input
-            className="h-9 rounded-xl bg-card"
             placeholder="City"
             value={contact.city}
             onChange={(e) => set("city", e.target.value)}
           />
           <Input
-            className="h-9 rounded-xl bg-card"
             placeholder="Region"
             value={contact.region}
             onChange={(e) => set("region", e.target.value)}
           />
           <Input
-            className="h-9 rounded-xl bg-card"
             placeholder="Postal code"
             value={contact.postalCode}
             onChange={(e) => set("postalCode", e.target.value)}
           />
           <Input
-            className="h-9 rounded-xl bg-card"
             placeholder="Country"
             value={contact.country}
             onChange={(e) => set("country", e.target.value)}
@@ -119,10 +114,10 @@ export default function ContactForm() {
           Note
         </Label>
         <Textarea
-          className="rounded-xl bg-card"
-          rows={3}
+          rows={2}
           placeholder="Anything else worth saving"
           value={contact.note}
+          className="resize-none min-h-12"
           onChange={(e) => set("note", e.target.value)}
         />
       </div>

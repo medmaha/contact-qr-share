@@ -8,7 +8,7 @@ export default function InfoField({
   ...props
 }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
-    <div className="space-y-1.5">
+    <div className="space-y-1.5 text-left">
       <Label className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
         {label}
       </Label>
