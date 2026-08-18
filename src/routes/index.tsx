@@ -108,7 +108,7 @@ function RepeatableList({
           variant="ghost"
           size="sm"
           className="h-7 gap-1 text-primary"
-          onClick={() => onChange([...items, { label: labels[0], value: "" }])}
+          onClick={() => onChange([...items, { label: (labels[0] ?? "OTHER"), value: "" }])}
         >
           <Plus /> Add
         </Button>
@@ -141,7 +141,7 @@ function RepeatableList({
             aria-label="Remove"
             className="h-11 w-11 shrink-0 text-muted-foreground hover:text-destructive"
             onClick={() =>
-              onChange(items.length > 1 ? items.filter((_, idx) => idx !== i) : [{ label: labels[0], value: "" }])
+              onChange(items.length > 1 ? items.filter((_, idx) => idx !== i) : [{ label: (labels[0] ?? "OTHER"), value: "" }])
             }
           >
             <Trash2 />
