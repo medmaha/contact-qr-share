@@ -197,19 +197,6 @@ If sharing isn't supported, the application falls back to downloading the QR ima
 
 You can also download the contact directly as a `.vcf` file and import it into compatible contacts applications.
 
-## 🎨 Component Isolation
-
-The UI is split into focused components rather than keeping the entire application in a single page component.
-
-This makes it easier to:
-
-* Reuse form elements
-* Test components independently
-* Change individual parts of the UI
-* Add additional contact fields
-* Keep the main route component small
-* Maintain consistent UI patterns
-
 For example, `RepeatableList` handles the common behavior shared by phone numbers, emails, and links instead of duplicating that logic in `ContactForm`.
 
 ## 🤝 Contributing
@@ -247,11 +234,9 @@ If you find a bug or have an idea for improving Contact QR, please open an issue
 
 ## 📄 License
 
-This project is open source. See the repository for the applicable license and additional project information.
+This project is open source under the MIT LICENSE. See the repository for the applicable license and additional project information.
 
-## 🔗 Repository
-
-**GitHub:** https://github.com/medmaha/contact-qr-share
+**MIT License:** https://github.com/medmaha/contact-qr-share/LISENSE
 
 ---
 
