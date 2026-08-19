@@ -32,14 +32,24 @@ export default function QRCodeCard() {
     };
   }, [vcard, hydrated, hasName]);
 
-  const download = () => {
+  const download = async () => {
     if (!dataUrl) return;
-    const a = document.createElement("a");
-    a.href = dataUrl;
-    a.download = `${contactFileName(contact)}-qr.png`;
-    a.click();
-    toast.success("QR code downloaded");
+    try {
+      const blob = await (await fetch(dataUrl)).blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${contactFileName(contact)}-qr.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      toast.success("QR code downloaded");
+    } catch {
+      toast.error("Download failed, try the share button instead");
+    }
   };
+  
 
   const share = async () => {
     if (!dataUrl) return;
